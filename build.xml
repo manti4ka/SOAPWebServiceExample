@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Create war file" basedir=".">
+<property name="jarfile" value="ExampleSoapServices"/>
+	<path id="classpath">
+	    <fileset dir="lib" includes="*.jar"/>
+	 </path>
+	<target name="clean">
+		<delete dir="bin" />
+		<delete file="${jarfile}.jar"/>
+	</target>
+	<target name="create">
+		<mkdir dir="bin"/>
+		<javac srcdir="src" destdir="bin">		
+		    <classpath refid="classpath" />
+		</javac>
+		<jar destfile="${jarfile}.jar" basedir="bin">
+			<fileset dir="lib">
+			</fileset>
+		</jar>
+	</target>
+
+	
+</project>
