@@ -1,27 +1,17 @@
 package com.webservice.example;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import javax.ejb.embeddable.EJBContainer;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import java.net.URL;
-import java.util.Properties;
+
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class CalculatorTest {
 
-    @BeforeClass
-    public static void setUp() throws Exception {
-        Properties properties = new Properties();
-        properties.setProperty("openejb.embedded.remotable", "true");
-        //properties.setProperty("httpejbd.print", "true");
-        //properties.setProperty("httpejbd.indent.xml", "true");
-        EJBContainer.createEJBContainer(properties);
-    }
-
+  
     @Test
     public void test() throws Exception {
         Service calculatorService = Service.create(
